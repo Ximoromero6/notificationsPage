@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background-color: #f7fafd;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .container {
+  background-color: white;
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 850px;
+  margin: 60px auto;
+  -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+main .container .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+main .container .header .notificationsTitleContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .container .header .notificationsTitleContainer h2 {
+  color: #1c202b;
+  font-weight: 900;
+}
+
+main .container .header .notificationsTitleContainer .notificationsNumber {
+  margin-left: 10px;
+  background-color: #0a317b;
+  border-radius: 6px;
+  color: #f7fafd;
+  padding: 3px 12px;
+  font-weight: 600;
+}
+
+main .container .header #markAsReadButton {
+  background-color: transparent;
+  font-family: inherit;
+  color: #939dae;
+  font-weight: 600;
+  border: none;
+  outline: 0;
+  cursor: pointer;
+  -webkit-transition: all .1s;
+  transition: all .1s;
+  font-size: 15px;
+}
+
+main .container .header #markAsReadButton:hover {
+  color: #0a317b;
+}
+
+main .container .containerNotifications .notification {
+  margin-bottom: 10px;
+  border-radius: 12px;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+main .container .containerNotifications .notification .profileImage {
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-right: 20px;
+}
+
+main .container .containerNotifications .notification .containerTitle p {
+  font-weight: 500;
+  color: #939dae;
+  font-size: 15px;
+  position: relative;
+}
+
+main .container .containerNotifications .notification .containerTitle p .fullName {
+  font-weight: 900;
+  color: #1c202b;
+  cursor: pointer;
+  -webkit-transition: all .1s;
+  transition: all .1s;
+}
+
+main .container .containerNotifications .notification .containerTitle p .fullName:hover {
+  color: #0a317b;
+}
+
+main .container .containerNotifications .notification .containerTitle p .titlePage {
+  font-weight: 900;
+  color: Dark_grayish_blue;
+  cursor: pointer;
+  -webkit-transition: all .1s;
+  transition: all .1s;
+}
+
+main .container .containerNotifications .notification .containerTitle p .titlePage:hover {
+  color: #0a317b;
+}
+
+main .container .containerNotifications .notification .containerTitle p .pageLink {
+  font-weight: 900;
+  color: #0a317b;
+  cursor: pointer;
+  -webkit-transition: all .1s;
+  transition: all .1s;
+}
+
+main .container .containerNotifications .notification .containerTitle .timeAgo {
+  margin-top: 3px;
+  font-size: 14px;
+}
+
+main .container .containerNotifications .notification .containerTitle .privateMessage {
+  margin-top: 10px;
+  border: 1px solid #dde7ee;
+  border-radius: 3px;
+  padding: 15px;
+  font-size: 15px;
+}
+
+main .container .containerNotifications .notification img.commentedImage {
+  width: 50px;
+  height: 50px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  margin-left: auto;
+}
+
+main .container .containerNotifications .notification.unread {
+  background-color: #f7fafd;
+}
+
+main .container .containerNotifications .notification.unread .containerTitle p:first-of-type::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  background-color: #f65351;
+  position: absolute;
+  right: 0;
+  right: -15px;
+  bottom: 20%;
+}
+/*# sourceMappingURL=styles.css.map */

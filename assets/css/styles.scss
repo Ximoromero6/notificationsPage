@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+$red:hsl(1,
+90%,
+64%);
+$blue: hsl(219,
+85%,
+26%);
+$White: hsl(0,
+0%,
+100%);
+$Very_light_grayish_blue: hsl(210,
+60%,
+98%);
+$Light_grayish_blue_1: hsl(211,
+68%,
+94%);
+$Light_grayish_blue_2: hsl(205,
+33%,
+90%);
+$Grayish_blue: hsl(219,
+14%,
+63%);
+$Dark_grayish_blue: hsl(219,
+12%,
+42%);
+$Very_dark_blue: hsl(224,
+21%,
+14%);
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    background-color: $Very_light_grayish_blue;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    .container {
+        background-color: $White;
+        border-radius: 20px;
+        padding: 30px;
+        max-width: 850px;
+        margin: 60px auto;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            .notificationsTitleContainer {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                h2 {
+                    color: $Very_dark_blue;
+                    font-weight: 900;
+                }
+                .notificationsNumber {
+                    margin-left: 10px;
+                    background-color: $blue;
+                    border-radius: 6px;
+                    color: $Very_light_grayish_blue;
+                    padding: 3px 12px;
+                    font-weight: 600;
+                }
+            }
+            #markAsReadButton {
+                background-color: transparent;
+                font-family: inherit;
+                color: $Grayish_blue;
+                font-weight: 600;
+                border: none;
+                outline: 0;
+                cursor: pointer;
+                transition: all .1s;
+                font-size: 15px;
+                &:hover {
+                    color: $blue;
+                }
+            }
+        }
+        .containerNotifications {
+            .notification {
+                margin-bottom: 10px;
+                border-radius: 12px;
+                padding: 20px;
+                display: flex;
+                align-items: flex-start;
+                transition: all .2s;
+                .profileImage {
+                    width: 45px;
+                    height: 45px;
+                    border-radius: 100%;
+                    object-fit: cover;
+                    margin-right: 20px;
+                }
+                .containerTitle {
+                    p {
+                        font-weight: 500;
+                        color: $Grayish_blue;
+                        font-size: 15px;
+                        position: relative;
+                        .fullName {
+                            font-weight: 900;
+                            color: $Very_dark_blue;
+                            cursor: pointer;
+                            transition: all .1s;
+                            &:hover {
+                                color: $blue;
+                            }
+                        }
+                        .titlePage {
+                            font-weight: 900;
+                            color: Dark_grayish_blue;
+                            cursor: pointer;
+                            transition: all .1s;
+                            &:hover {
+                                color: $blue;
+                            }
+                        }
+                        .pageLink {
+                            font-weight: 900;
+                            color: $blue;
+                            cursor: pointer;
+                            transition: all .1s;
+                        }
+                    }
+                    .timeAgo {
+                        margin-top: 3px;
+                        font-size: 14px;
+                    }
+                    .privateMessage {
+                        margin-top: 10px;
+                        border: 1px solid $Light_grayish_blue_2;
+                        border-radius: 3px;
+                        padding: 15px;
+                        font-size: 15px;
+                    }
+                }
+                img.commentedImage {
+                    width: 50px;
+                    height: 50px;
+                    object-fit: cover;
+                    display: block;
+                    margin-left: auto;
+                }
+                &.unread {
+                    background-color: $Very_light_grayish_blue;
+                    .containerTitle {
+                        p:first-of-type {
+                            &::before {
+                                content: "";
+                                width: 8px;
+                                height: 8px;
+                                border-radius: 100%;
+                                background-color: $red;
+                                position: absolute;
+                                right: 0;
+                                right: -15px;
+                                bottom: 20%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
