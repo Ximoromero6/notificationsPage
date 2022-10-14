@@ -53,9 +53,10 @@ main {
             display: flex;
             align-items: center;
             justify-content: center;
-            h2 {
+            h1 {
                 color: $Very_dark_blue;
                 font-weight: 700;
+                font-size: 1.5em;
             }
             .notificationsNumber {
                 margin-left: 10px;

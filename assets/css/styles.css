@@ -46,9 +46,10 @@ main .header .notificationsTitleContainer {
           justify-content: center;
 }
 
-main .header .notificationsTitleContainer h2 {
+main .header .notificationsTitleContainer h1 {
   color: #1c202b;
   font-weight: 700;
+  font-size: 1.5em;
 }
 
 main .header .notificationsTitleContainer .notificationsNumber {
