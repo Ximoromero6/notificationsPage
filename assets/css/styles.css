@@ -9,29 +9,19 @@
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
   background-color: #f7fafd;
-  min-height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
-main .container {
+main {
   background-color: white;
-  border-radius: 20px;
+  border-radius: 16px;
   padding: 30px;
-  max-width: 850px;
-  margin: 60px auto;
-  -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  max-width: 700px;
+  margin: 20px auto;
+  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-main .container .header {
+main .header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -44,7 +34,7 @@ main .container .header {
   margin-bottom: 30px;
 }
 
-main .container .header .notificationsTitleContainer {
+main .header .notificationsTitleContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -56,21 +46,21 @@ main .container .header .notificationsTitleContainer {
           justify-content: center;
 }
 
-main .container .header .notificationsTitleContainer h2 {
+main .header .notificationsTitleContainer h2 {
   color: #1c202b;
-  font-weight: 900;
+  font-weight: 700;
 }
 
-main .container .header .notificationsTitleContainer .notificationsNumber {
+main .header .notificationsTitleContainer .notificationsNumber {
   margin-left: 10px;
   background-color: #0a317b;
   border-radius: 6px;
   color: #f7fafd;
-  padding: 3px 12px;
-  font-weight: 600;
+  padding: 4px 12px;
+  font-weight: 500;
 }
 
-main .container .header #markAsReadButton {
+main .header #markAsReadButton {
   background-color: transparent;
   font-family: inherit;
   color: #939dae;
@@ -83,13 +73,13 @@ main .container .header #markAsReadButton {
   font-size: 15px;
 }
 
-main .container .header #markAsReadButton:hover {
+main .header #markAsReadButton:hover {
   color: #0a317b;
 }
 
-main .container .containerNotifications .notification {
+main .containerNotifications .notification {
   margin-bottom: 10px;
-  border-radius: 12px;
+  border-radius: 8px;
   padding: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -101,7 +91,7 @@ main .container .containerNotifications .notification {
   transition: all .2s;
 }
 
-main .container .containerNotifications .notification .profileImage {
+main .containerNotifications .notification .profileImage {
   width: 45px;
   height: 45px;
   border-radius: 100%;
@@ -110,26 +100,27 @@ main .container .containerNotifications .notification .profileImage {
   margin-right: 20px;
 }
 
-main .container .containerNotifications .notification .containerTitle p {
+main .containerNotifications .notification .containerTitle p {
   font-weight: 500;
   color: #939dae;
   font-size: 15px;
   position: relative;
 }
 
-main .container .containerNotifications .notification .containerTitle p .fullName {
+main .containerNotifications .notification .containerTitle p .fullName {
   font-weight: 900;
   color: #1c202b;
   cursor: pointer;
   -webkit-transition: all .1s;
   transition: all .1s;
+  margin-right: 6px;
 }
 
-main .container .containerNotifications .notification .containerTitle p .fullName:hover {
+main .containerNotifications .notification .containerTitle p .fullName:hover {
   color: #0a317b;
 }
 
-main .container .containerNotifications .notification .containerTitle p .titlePage {
+main .containerNotifications .notification .containerTitle p .titlePage {
   font-weight: 900;
   color: Dark_grayish_blue;
   cursor: pointer;
@@ -137,11 +128,11 @@ main .container .containerNotifications .notification .containerTitle p .titlePa
   transition: all .1s;
 }
 
-main .container .containerNotifications .notification .containerTitle p .titlePage:hover {
+main .containerNotifications .notification .containerTitle p .titlePage:hover {
   color: #0a317b;
 }
 
-main .container .containerNotifications .notification .containerTitle p .pageLink {
+main .containerNotifications .notification .containerTitle p .pageLink {
   font-weight: 900;
   color: #0a317b;
   cursor: pointer;
@@ -149,20 +140,20 @@ main .container .containerNotifications .notification .containerTitle p .pageLin
   transition: all .1s;
 }
 
-main .container .containerNotifications .notification .containerTitle .timeAgo {
+main .containerNotifications .notification .containerTitle .timeAgo {
   margin-top: 3px;
   font-size: 14px;
 }
 
-main .container .containerNotifications .notification .containerTitle .privateMessage {
+main .containerNotifications .notification .containerTitle .privateMessage {
   margin-top: 10px;
   border: 1px solid #dde7ee;
-  border-radius: 3px;
+  border-radius: 6px;
   padding: 15px;
   font-size: 15px;
 }
 
-main .container .containerNotifications .notification img.commentedImage {
+main .containerNotifications .notification img.commentedImage {
   width: 50px;
   height: 50px;
   -o-object-fit: cover;
@@ -171,19 +162,32 @@ main .container .containerNotifications .notification img.commentedImage {
   margin-left: auto;
 }
 
-main .container .containerNotifications .notification.unread {
+main .containerNotifications .notification.unread {
   background-color: #f7fafd;
 }
 
-main .container .containerNotifications .notification.unread .containerTitle p:first-of-type::before {
-  content: "";
+main .containerNotifications .notification.unread .containerTitle p .notificationDot {
+  display: inline-block;
   width: 8px;
   height: 8px;
   border-radius: 100%;
   background-color: #f65351;
-  position: absolute;
-  right: 0;
-  right: -15px;
-  bottom: 20%;
+  margin-left: 5px;
+}
+
+@media (max-width: 768px) {
+  main {
+    border-radius: 0;
+    padding: 20px;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    margin: 0 auto;
+  }
+  main .containerNotifications .notification {
+    padding: 15px;
+  }
+  main .containerNotifications .notification .profileImage {
+    margin-right: 15px;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

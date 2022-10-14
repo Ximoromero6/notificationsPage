@@ -35,139 +35,145 @@ $Very_dark_blue: hsl(224,
 body {
     font-family: "Plus Jakarta Sans", sans-serif;
     background-color: $Very_light_grayish_blue;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 main {
-    .container {
-        background-color: $White;
-        border-radius: 20px;
-        padding: 30px;
-        max-width: 850px;
-        margin: 60px auto;
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-        .header {
+    background-color: $White;
+    border-radius: 16px;
+    padding: 30px;
+    max-width: 700px;
+    margin: 20px auto;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        .notificationsTitleContainer {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            margin-bottom: 30px;
-            .notificationsTitleContainer {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                h2 {
-                    color: $Very_dark_blue;
-                    font-weight: 900;
+            justify-content: center;
+            h2 {
+                color: $Very_dark_blue;
+                font-weight: 700;
+            }
+            .notificationsNumber {
+                margin-left: 10px;
+                background-color: $blue;
+                border-radius: 6px;
+                color: $Very_light_grayish_blue;
+                padding: 4px 12px;
+                font-weight: 500;
+            }
+        }
+        #markAsReadButton {
+            background-color: transparent;
+            font-family: inherit;
+            color: $Grayish_blue;
+            font-weight: 600;
+            border: none;
+            outline: 0;
+            cursor: pointer;
+            transition: all .1s;
+            font-size: 15px;
+            &:hover {
+                color: $blue;
+            }
+        }
+    }
+    .containerNotifications {
+        .notification {
+            margin-bottom: 10px;
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            align-items: flex-start;
+            transition: all .2s;
+            .profileImage {
+                width: 45px;
+                height: 45px;
+                border-radius: 100%;
+                object-fit: cover;
+                margin-right: 20px;
+            }
+            .containerTitle {
+                p {
+                    font-weight: 500;
+                    color: $Grayish_blue;
+                    font-size: 15px;
+                    position: relative;
+                    .fullName {
+                        font-weight: 900;
+                        color: $Very_dark_blue;
+                        cursor: pointer;
+                        transition: all .1s;
+                        margin-right: 6px;
+                        &:hover {
+                            color: $blue;
+                        }
+                    }
+                    .titlePage {
+                        font-weight: 900;
+                        color: Dark_grayish_blue;
+                        cursor: pointer;
+                        transition: all .1s;
+                        &:hover {
+                            color: $blue;
+                        }
+                    }
+                    .pageLink {
+                        font-weight: 900;
+                        color: $blue;
+                        cursor: pointer;
+                        transition: all .1s;
+                    }
                 }
-                .notificationsNumber {
-                    margin-left: 10px;
-                    background-color: $blue;
+                .timeAgo {
+                    margin-top: 3px;
+                    font-size: 14px;
+                }
+                .privateMessage {
+                    margin-top: 10px;
+                    border: 1px solid $Light_grayish_blue_2;
                     border-radius: 6px;
-                    color: $Very_light_grayish_blue;
-                    padding: 3px 12px;
-                    font-weight: 600;
+                    padding: 15px;
+                    font-size: 15px;
                 }
             }
-            #markAsReadButton {
-                background-color: transparent;
-                font-family: inherit;
-                color: $Grayish_blue;
-                font-weight: 600;
-                border: none;
-                outline: 0;
-                cursor: pointer;
-                transition: all .1s;
-                font-size: 15px;
-                &:hover {
-                    color: $blue;
+            img.commentedImage {
+                width: 50px;
+                height: 50px;
+                object-fit: cover;
+                display: block;
+                margin-left: auto;
+            }
+            &.unread {
+                background-color: $Very_light_grayish_blue;
+                .containerTitle {
+                    p {
+                        .notificationDot {
+                            display: inline-block;
+                            width: 8px;
+                            height: 8px;
+                            border-radius: 100%;
+                            background-color: $red;
+                            margin-left: 5px;
+                        }
+                    }
                 }
             }
         }
+    }
+    @media(max-width: 768px) {
+        border-radius: 0;
+        padding: 20px;
+        box-shadow: none;
+        margin: 0 auto;
         .containerNotifications {
             .notification {
-                margin-bottom: 10px;
-                border-radius: 12px;
-                padding: 20px;
-                display: flex;
-                align-items: flex-start;
-                transition: all .2s;
+                padding: 15px;
                 .profileImage {
-                    width: 45px;
-                    height: 45px;
-                    border-radius: 100%;
-                    object-fit: cover;
-                    margin-right: 20px;
-                }
-                .containerTitle {
-                    p {
-                        font-weight: 500;
-                        color: $Grayish_blue;
-                        font-size: 15px;
-                        position: relative;
-                        .fullName {
-                            font-weight: 900;
-                            color: $Very_dark_blue;
-                            cursor: pointer;
-                            transition: all .1s;
-                            &:hover {
-                                color: $blue;
-                            }
-                        }
-                        .titlePage {
-                            font-weight: 900;
-                            color: Dark_grayish_blue;
-                            cursor: pointer;
-                            transition: all .1s;
-                            &:hover {
-                                color: $blue;
-                            }
-                        }
-                        .pageLink {
-                            font-weight: 900;
-                            color: $blue;
-                            cursor: pointer;
-                            transition: all .1s;
-                        }
-                    }
-                    .timeAgo {
-                        margin-top: 3px;
-                        font-size: 14px;
-                    }
-                    .privateMessage {
-                        margin-top: 10px;
-                        border: 1px solid $Light_grayish_blue_2;
-                        border-radius: 3px;
-                        padding: 15px;
-                        font-size: 15px;
-                    }
-                }
-                img.commentedImage {
-                    width: 50px;
-                    height: 50px;
-                    object-fit: cover;
-                    display: block;
-                    margin-left: auto;
-                }
-                &.unread {
-                    background-color: $Very_light_grayish_blue;
-                    .containerTitle {
-                        p:first-of-type {
-                            &::before {
-                                content: "";
-                                width: 8px;
-                                height: 8px;
-                                border-radius: 100%;
-                                background-color: $red;
-                                position: absolute;
-                                right: 0;
-                                right: -15px;
-                                bottom: 20%;
-                            }
-                        }
-                    }
+                    margin-right: 15px;
                 }
             }
         }
