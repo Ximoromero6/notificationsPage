@@ -80,7 +80,7 @@ main .header #markAsReadButton:hover {
 main .containerNotifications .notification {
   margin-bottom: 10px;
   border-radius: 8px;
-  padding: 20px;
+  padding: 16px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
